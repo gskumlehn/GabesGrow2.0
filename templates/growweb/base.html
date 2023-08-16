@@ -12,20 +12,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-
-<nav class="navbar fixed-top bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="{% url 'index' %}">
-            <img src="{% static '/assets/logo/logo.png' %}" alt="Logo do Gabe's grow" height="50">
-        </a>
-        <a href="{% url 'data' %}">
-            data
-        </a>
-    </div>
-</nav>
+{% include 'growweb/partials/nav.html' %}
 
 {% block content %}
 {% endblock %}
 
+{% include 'growweb/partials/footer.html' %}
 </body>
 </html>
