@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class AirData(models.Model):
     date = models.DateTimeField(null=False, blank=False)
@@ -9,18 +10,17 @@ class SoilData(models.Model):
     date = models.DateTimeField(null=False, blank=False)
     humidity = models.DecimalField(null=False, blank=False, max_digits=5, decimal_places=2)
 
-class StageTypes(models.TextChoices):
+class StageType(models.TextChoices):
     VEGETATIVE = "VG", "Vegetative"
     FLOWERING = "FL", "Flowering"
 
 class GrowConfig(models.Model):
-
-    lastUpdate = models.DateTimeField(null=False, blank=False)
-    stageType = models.CharField(max_length=2, choices=StageTypes.choices, default=StageTypes.VEGETATIVE,  null=False, blank=False)
+    lastUpdate = models.DateTimeField(null=False, blank=False,default=datetime.now)
+    stageType = models.CharField(max_length=2, choices=StageType.choices, default=StageType.VEGETATIVE,  null=False, blank=False)
     watering = models.BooleanField(null=False, blank=False)
 
 class Stage(models.Model):
-    type = models.CharField(max_length=2, choices=StageTypes.choices, null=False, blank=False)
+    type = models.CharField(max_length=2, choices=StageType.choices, null=False, blank=False)
     lightOn = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False)
     lightOff = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False)
     phMin = models.DecimalField(max_digits=4, decimal_places=2)
@@ -33,7 +33,6 @@ class Stage(models.Model):
     airHumMax = models.DecimalField(max_digits=4, decimal_places=2)
 
 class GrowConfigHistory(models.Model):
-
     growConfig = models.ForeignKey("GrowConfig", on_delete=models.CASCADE)
-    date = models.DateTimeField(null=False, blank=False)
+    date = models.DateTimeField(null=False, blank=False, default=datetime.now)
     description = models.TextField(null=False, blank=False)
