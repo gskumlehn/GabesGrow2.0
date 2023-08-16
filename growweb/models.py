@@ -9,9 +9,31 @@ class SoilData(models.Model):
     date = models.DateTimeField(null=False, blank=False)
     humidity = models.DecimalField(null=False, blank=False, max_digits=5, decimal_places=2)
 
+class StageTypes(models.TextChoices):
+    VEGETATIVE = "VG", "Vegetative"
+    FLOWERING = "FL", "Flowering"
+
 class GrowConfig(models.Model):
+
     lastUpdate = models.DateTimeField(null=False, blank=False)
-    stage = models.CharField(max_length=10, null=False, blank=False)
+    stageType = models.CharField(max_length=2, choices=StageTypes.choices, default=StageTypes.VEGETATIVE,  null=False, blank=False)
     watering = models.BooleanField(null=False, blank=False)
+
+class Stage(models.Model):
+    type = models.CharField(max_length=2, choices=StageTypes.choices, null=False, blank=False)
+    lightOn = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False)
+    lightOff = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False)
+    phMin = models.DecimalField(max_digits=4, decimal_places=2)
+    phMax = models.DecimalField(max_digits=4, decimal_places=2)
+    tempMin = models.DecimalField(max_digits=4, decimal_places=2)
+    tempMax = models.DecimalField(max_digits=4, decimal_places=2)
+    soilHumMin = models.DecimalField(max_digits=4, decimal_places=2)
+    soilHumMax = models.DecimalField(max_digits=4, decimal_places=2)
+    airHumMin = models.DecimalField(max_digits=4, decimal_places=2)
+    airHumMax = models.DecimalField(max_digits=4, decimal_places=2)
+
 class GrowConfigHistory(models.Model):
+
     growConfig = models.ForeignKey("GrowConfig", on_delete=models.CASCADE)
+    date = models.DateTimeField(null=False, blank=False)
+    description = models.TextField(null=False, blank=False)
