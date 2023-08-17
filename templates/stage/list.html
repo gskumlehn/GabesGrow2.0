@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<main role="main" class="inner cover mt-5">
+    <table>
+        <thead>
+            <tr>
+                <th>Stage</th>
+                <th>Hours on</th>
+                <th>pH</th>
+                <th>Temp. (°C)</th>
+                <th>Air Humid.</th>
+                <th>Soil Humid.</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for stage in stages %}
+                <td>{% stage.type %}</td>
+                <td>{% stage.lightOff - stage.lightOn %}</td>
+                <td>{% stage.tempMin %} - {% stage.tempMax %}</td>
+                <td>{% stage.airHumMin %} - {% stage.airHumMax %}%</td>
+                <td>{% stage.soilHumMin %} - {% stage.soilHumMax %}%</td>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}
