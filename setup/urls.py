@@ -10,5 +10,5 @@ urlpatterns = [
     path('config/', include('config.urls')),
     path('', include('dashboard.urls')),
     path('stage/', include('stage.urls')),
-    path('login/', include('user.urls')),
+    path('', include('user.urls')),
 ]
