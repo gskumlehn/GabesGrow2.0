@@ -6,8 +6,13 @@
 a,
 a:focus,
 a:hover {
-  color: #009900
-;
+  color: #009900;
+}
+
+a:link {
+  color: #009900;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 /* Custom default button */
