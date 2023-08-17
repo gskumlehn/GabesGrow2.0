@@ -13,6 +13,7 @@ class SoilData(models.Model):
 class StageType(models.TextChoices):
     VEGETATIVE = "VG", "Vegetative"
     FLOWERING = "FL", "Flowering"
+    PRE_HARVEST = "PH", "Pre-harvest"
 
 class GrowConfig(models.Model):
     lastUpdate = models.DateTimeField(null=False, blank=False,default=datetime.now)
