@@ -10,7 +10,7 @@ a:hover {
 }
 
 a:link {
-  color: #009900;
+  color: --green;
   background-color: transparent;
   text-decoration: none;
 }
