@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('growweb', '0001_initial'),
+        ('dashboard', '0001_initial'),
     ]
 
     operations = [
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             name='GrowConfigHistory',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('growConfig', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='growweb.growconfig')),
+                ('growConfig', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dashboard.growconfig')),
             ],
         ),
     ]

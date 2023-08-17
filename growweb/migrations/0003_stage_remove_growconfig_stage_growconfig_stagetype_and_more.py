@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('growweb', '0002_growconfig_soildata_growconfighistory'),
+        ('dashboard', '0002_growconfig_soildata_growconfighistory'),
     ]
 
     operations = [

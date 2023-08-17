@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('growweb', '0004_alter_growconfig_lastupdate_and_more'),
+        ('dashboard', '0004_alter_growconfig_lastupdate_and_more'),
     ]
 
     operations = [
