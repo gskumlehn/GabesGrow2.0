@@ -17,11 +17,9 @@
 </head>
 <body>
 <div class="container-fluid">
-{% include 'growweb/partials/nav.html' %}
-    <div class="row">
-        {% block content %}
-        {% endblock %}
-    </div>
+    {% include 'growweb/partials/nav.html' %}
+    {% block content %}
+    {% endblock %}
 </div>
 {% include 'growweb/partials/footer.html' %}
 </body>
