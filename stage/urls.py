@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.urls import path
+from stage.views import show
 
-def index(request):
-    return render(request, 'stage/list.html')
-
+urlpatterns = [
+    path('stage', show, name='show'),
+]

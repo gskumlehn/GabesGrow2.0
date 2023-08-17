@@ -1,6 +1,6 @@
 from django.urls import path
-from dashboard.views import index
+from config.views import index
 
 urlpatterns = [
-    path('config', config, name='config'),
+    path('config', index, name='config'),
 ]
