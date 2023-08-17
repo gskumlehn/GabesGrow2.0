@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
-from growweb.functions.AirHumidityAndTemperature import AirHumidityAndTemperature
+from growweb.functions import AirHumidityAndTemperature
 
 def index(request):
     humidity, temperature = AirHumidityAndTemperature.get()
