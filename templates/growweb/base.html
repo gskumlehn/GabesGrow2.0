@@ -16,12 +16,12 @@
     <script type="text/javascript" srb="{% static '/js/temperature-gauge.js' %}"></script>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container">
 {% include 'growweb/partials/nav.html' %}
-
-{% block content %}
-{% endblock %}
-
+    <div class="row">
+        {% block content %}
+        {% endblock %}
+    </div>
 </div>
 {% include 'growweb/partials/footer.html' %}
 </body>
