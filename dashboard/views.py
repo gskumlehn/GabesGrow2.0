@@ -8,4 +8,6 @@ def index(request):
     return render(request, 'dashboard/index.html',
                   {"humidity": humidity, "temperature": temperature, "time": collectionTime})
 
+def data(request):
+    return render(request, 'dashboard/data.html')
 
