@@ -7,6 +7,7 @@ class StageType(models.TextChoices):
 
 class Stage(models.Model):
     type = models.CharField(max_length=2, choices=StageType.choices, null=False, blank=False)
+    lightOnFor = models.IntegerField(max_digits=2, null=False, blank=False, default=18)
     lightOn = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False)
     lightOff = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False)
     phMin = models.DecimalField(max_digits=4, decimal_places=2)
