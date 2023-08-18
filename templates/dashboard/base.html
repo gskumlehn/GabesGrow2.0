@@ -15,6 +15,12 @@
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         {% include 'dashboard/partials/nav.html' %}
 
+        {% for message in messages %}
+            <div>
+                <p id="messages">{{ message }}</p>
+            </div>
+        {% endfor %}
+
         {% block content %}
         {% endblock %}
 

@@ -1,5 +1,6 @@
 from dashboard.views import index
 from django.contrib.auth.models import auth
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from user.forms import LoginForm
 
@@ -16,8 +17,10 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
+                messages.success(request, "login successful")
                 return redirect(index)
             else:
-                return redirect(login, {"mensagem": password})
+                messages.error(request, "login failed")
+                return redirect(login)
 
     return render(request, 'user/login.html', {"form": form})
