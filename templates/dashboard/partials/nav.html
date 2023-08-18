@@ -9,7 +9,11 @@
                 <a class="col col-sm-6" href="{% url 'data' %}">data</a>
                 <a class="col col-sm-6" href="{% url 'config' %}">config</a>
                 <a class="col col-sm-6" href="{% url 'stageList' %}">stages</a>
-                <a class="col col-sm-6" href="{% url 'login' %}">login</a>
+                {% if user.is_authenticated %}
+                    <a class="col col-sm-6" href="{% url 'logout' %}">logout</a>
+                {% else %}
+                    <a class="col col-sm-6" href="{% url 'login' %}">login</a>
+                {% endif %}
             </div>
         </nav>
     </div>
