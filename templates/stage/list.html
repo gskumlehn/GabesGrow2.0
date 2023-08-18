@@ -15,7 +15,6 @@
         <tbody>
             {%  for stage in stages %}
                 <tr>
-                    <th scope="row">{{ 1 + stages.index(stage) }}</th>
                     <td>{{ stage.type }}</td>
                     <td>{{ stage.lightOnFor }}</td>
                     <td>{{ stage.tempMin }} - {{ stage.tempMax }}</td>
