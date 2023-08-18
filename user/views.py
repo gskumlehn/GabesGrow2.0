@@ -18,6 +18,6 @@ def login(request):
                 auth.login(request, user)
                 return redirect(index)
             else:
-                return redirect(login, {"user": user is not None})
+                return redirect(login, {"mensagem": user is not None})
 
     return render(request, 'user/login.html', {"form": form})
