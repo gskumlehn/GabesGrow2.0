@@ -16,9 +16,15 @@
         {% include 'dashboard/partials/nav.html' %}
 
         {% for message in messages %}
-            <div class="alert alert-primary">
-                <p id="messages">{{ message }}</p>
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <div class="alert alert-primary">
+                        <p id="messages">{{ message }}</p>
+                    </div>
+                </div>
             </div>
+        </div>
         {% endfor %}
 
         {% block content %}
