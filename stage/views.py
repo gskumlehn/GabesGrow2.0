@@ -5,5 +5,5 @@ def show(request):
     return render(request, 'stage/show.html')
 
 def list(request):
-    stages = Stage.objects.all()
+    stages = Stage.objects.values_list()
     return render(request, 'stage/list.html', {"stages": stages})
