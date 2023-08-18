@@ -7,6 +7,17 @@
         <label class="form-check-label" for="watering" value="{{ config.watering }}">Autowatering</label>
     </div>
     <p class="mt-5">
+        Stage:
+        {% if config.stage == 'VG' %}
+            Vegetative
+        {% elif config.stage == 'FL' %}
+            Flowering
+        {% else %}
+            Pre-harvest
+        {% endif %}
+    </p>
+
+    <p class="mt-5">
         Last Update: {{ config.lastUpdate }}
     </p>
 
