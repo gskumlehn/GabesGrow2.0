@@ -7,7 +7,7 @@ class LoginForm(forms.Form):
         max_length=100,
         widget=forms.TextInput(
             attrs={
-                "class": "form-group"
+                "class": "form-control"
             }
         )
     )
@@ -17,7 +17,7 @@ class LoginForm(forms.Form):
         max_length=100,
         widget=forms.PasswordInput(
             attrs={
-                "class": "form-group"
+                "class": "form-control"
             }
         )
     )
