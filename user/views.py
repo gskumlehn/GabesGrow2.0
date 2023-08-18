@@ -7,6 +7,9 @@ from user.forms import LoginForm
 def login(request):
     form = LoginForm()
 
+    if request.user.is_autheticated():
+        return redirect('index')
+
     if request.method == 'POST':
         if form.is_valid():
 
