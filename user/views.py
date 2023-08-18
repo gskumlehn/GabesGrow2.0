@@ -14,7 +14,7 @@ def login(request):
 
             user = auth.authenticate(request, username=username, password=password)
 
-            if user is not None:
+            if user:
                 auth.login(request, user)
                 return redirect(index)
             else:
