@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
-from data.functions import AirHumidityAndTemperature
+from apps.data.functions import AirHumidityAndTemperature
+
 
 def index(request):
     if not request.user.is_authenticated:

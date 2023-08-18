@@ -1,5 +1,5 @@
 from django.contrib import admin
-from stage.models import Stage
+from apps.stage.models import Stage
 
 class ListStage(admin.ModelAdmin):
     list_display = ('type', 'lightOn', 'lightOff', 'phMin', 'phMax', 'tempMin', 'tempMax', 'soilHumMin', 'soilHumMax', 'airHumMin', 'airHumMax',)

@@ -34,17 +34,17 @@ ALLOWED_HOSTS = ['192.168.15.1',
 ]
 
 INSTALLED_APPS = [
-    'config.apps.ConfigConfig',
-    'dashboard.apps.DashboardConfig',
-    'data.apps.DataConfig',
+    'apps.config.apps.ConfigConfig',
+    'apps.dashboard.apps.DashboardConfig',
+    'apps.data.apps.DataConfig',
+    'apps.stage.apps.StageConfig',
+    'apps.user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'stage.apps.StageConfig',
-    'user.apps.UserConfig'
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [

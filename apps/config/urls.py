@@ -1,5 +1,5 @@
 from django.urls import path
-from config.views import index
+from apps.config.views import index
 
 urlpatterns = [
     path('', index, name='config'),

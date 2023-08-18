@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from stage.models import Stage
+from apps.stage.models import Stage
 
 def show(request):
     return render(request, 'stage/show.html')

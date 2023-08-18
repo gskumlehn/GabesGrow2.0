@@ -1,5 +1,5 @@
 from django.contrib import admin
-from config.models import GrowConfig, GrowConfigHistory
+from apps.config.models import GrowConfig, GrowConfigHistory
 class ListGrowConfig(admin.ModelAdmin):
     list_display = ('id', 'stageType', 'watering', 'lastUpdate')
     list_display_links = ('id', 'lastUpdate')

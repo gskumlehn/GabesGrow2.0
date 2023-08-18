@@ -1,7 +1,7 @@
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from user.forms import LoginForm
+from apps.user.forms import LoginForm
 
 def login(request):
     if request.user:

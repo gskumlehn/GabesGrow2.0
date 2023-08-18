@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.db import models
-from stage.models import StageType
+from apps.stage.models import StageType
 
 class GrowConfig(models.Model):
     lastUpdate = models.DateTimeField(null=False, blank=False,default=datetime.now)
