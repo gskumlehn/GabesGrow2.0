@@ -13,6 +13,7 @@ def login(request):
             password = form.password.value()
 
             user = auth.authenticate(request, username=username, password=password)
+            print(user)
             if user is not None:
                 auth.login(request, user)
                 return redirect(index)
