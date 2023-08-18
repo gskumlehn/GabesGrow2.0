@@ -7,7 +7,8 @@ def login(request):
     form = LoginForm()
 
     if request.user:
-        return redirect('index')
+        if request.user.is_authenticated:
+            return redirect('index')
 
     if request.method == 'POST':
         if form.is_valid():
