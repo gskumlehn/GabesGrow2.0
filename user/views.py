@@ -12,7 +12,7 @@ def login(request):
 
     if request.method == 'POST':
         if form.is_valid():
-
+            form = LoginForm(request.POST)
             user = auth.authenticate(request, username=form.username, password=form.password)
 
             if user is not None:
