@@ -18,9 +18,13 @@ def login(request):
             if user is not None:
                 auth.login(request, user)
                 messages.success(request, "login successful")
-                return redirect(index)
+                return redirect('index')
             else:
                 messages.error(request, "login failed")
-                return redirect(login)
+                return redirect('login')
 
     return render(request, 'user/login.html', {"form": form})
+
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
