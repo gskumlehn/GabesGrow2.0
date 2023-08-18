@@ -6,6 +6,7 @@
         <thead>
             <tr>
                 <th scope="col">Stage</th>
+                <th scope="col">Lights on for (h)</th>
                 <th scope="col">pH</th>
                 <th scope="col">Temp. (°C)</th>
                 <th scope="col">Air Humid.</th>
@@ -17,6 +18,7 @@
                 <tr>
                     <td>{{ stage.type }}</td>
                     <td>{{ stage.lightOnFor }}</td>
+                    <td>{{ stage.phMin }} - {{ stage.phMax }}</td>
                     <td>{{ stage.tempMin }} - {{ stage.tempMax }}</td>
                     <td>{{ stage.airHumMin }} - {{ stage.airHumMax }}%</td>
                     <td>{{ stage.soilHumMin }} - {{ stage.soilHumMax }}%</td>
