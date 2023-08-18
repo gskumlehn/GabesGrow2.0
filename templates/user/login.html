@@ -4,14 +4,14 @@
 <main role="main" class="inner cover mt-5">
     <form>
         {% csrf_token%}
-        <div class="row">
+        <div class="row" align="center">
             {%  for field in form.visible_fields %}
-                <div class="col-12 col-lg-12" style="margin-bottom: 5px;">
+                <div class="col-6 col-md-6" style="margin-bottom: 5px;">
                     <label for="{{ field.id_for_label }}" style="margin-bottom: 5px;">{{ field.label }}</label>
                     {{ field }}
                 </div>
             {% endfor %}
-            <div class="col-12 col-lg-12" style="margin-bottom: 5px;">
+            <div class="col-6 col-md-6" style="margin-bottom: 5px;">
                 <button class="btn btn-success" style="padding: top 5px;" type="submit">login</button>
             </div>
         </div>
