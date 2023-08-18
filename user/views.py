@@ -2,6 +2,7 @@ from dashboard.views import index
 from django.contrib.auth.models import User, auth
 from django.shortcuts import render, redirect
 from user.forms import LoginForm
+import logging
 
 def login(request):
     form = LoginForm()
@@ -13,7 +14,8 @@ def login(request):
             password = form.password.value()
 
             user = auth.authenticate(request, username=username, password=password)
-            print(user)
+            logger = logging.getLogger("mylogger")
+            logger.info(user)
             if user is not None:
                 auth.login(request, user)
                 return redirect(index)
