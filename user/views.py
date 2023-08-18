@@ -1,4 +1,3 @@
-from dashboard.views import index
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -13,10 +12,7 @@ def login(request):
     if request.method == 'POST':
         if form.is_valid():
 
-            username = form['username'].value()
-            password = form['password'].value()
-
-            user = auth.authenticate(request, username=username, password=password)
+            user = auth.authenticate(request, username=form.username, password=form.password)
 
             if user is not None:
                 auth.login(request, user)
