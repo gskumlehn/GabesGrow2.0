@@ -2,19 +2,20 @@
 {% load static %}
 {% block content %}
 <main role="main" class="inner cover mt-5">
-    <table>
+    <table class=".table">
         <thead>
             <tr>
-                <th>Stage</th>
-                <th>pH</th>
-                <th>Temp. (°C)</th>
-                <th>Air Humid.</th>
-                <th>Soil Humid.</th>
+                <th scope="col">Stage</th>
+                <th scope="col">pH</th>
+                <th scope="col">Temp. (°C)</th>
+                <th scope="col">Air Humid.</th>
+                <th scope="col">Soil Humid.</th>
             </tr>
         </thead>
         <tbody>
             {%  for stage in stages %}
                 <tr>
+                    <th scope="row">{{ 1 + stages.index(stage) }}</th>
                     <td>{{ stage.type }}</td>
                     <td>{{ stage.lightOnFor }}</td>
                     <td>{{ stage.tempMin }} - {{ stage.tempMax }}</td>
