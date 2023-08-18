@@ -17,7 +17,7 @@ class LoginForm(forms.Form):
         max_length=100,
         widget=forms.PasswordInput(
             attrs={
-                "class": "form-control col-6 col-md-6"
+                "class": "form-control"
             }
         )
     )
