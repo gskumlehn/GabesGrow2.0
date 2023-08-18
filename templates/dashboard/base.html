@@ -15,17 +15,7 @@
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         {% include 'dashboard/partials/nav.html' %}
 
-        {% for message in messages %}
-        <div class="container mt-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6">
-                    <div class="alert alert-primary">
-                        <p id="messages">{{ message }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        {% include 'dashboard.partials/message.html' %}
 
         {% block content %}
         {% endblock %}
