@@ -3,9 +3,9 @@
                 <tr>
                     <td>{{ stage.type }}</td>
                     <td>{{ stage.lightOff - stage.lightOn }}</td>
-                    <td>{{ stage.tempMin %} - {% stage.tempMax }}</td>
-                    <td>{{ stage.airHumMin %} - {% stage.airHumMax %}%</td>
-                    <td>{{ stage.soilHumMin %} - {% stage.soilHumMax %}%</td>
+                    <td>{{ stage.tempMin }} - {{ stage.tempMax }}</td>
+                    <td>{{ stage.airHumMin }} - {{ stage.airHumMax %}%</td>
+                    <td>{{ stage.soilHumMin }} - {{ stage.soilHumMax %}%</td>
                 </tr>
             {% endfor %}
         </tbody>
