@@ -4,16 +4,15 @@ from django.shortcuts import render, redirect
 from user.forms import LoginForm
 
 def login(request):
-    form = LoginForm()
-
     if request.user:
         if request.user.is_authenticated:
             return redirect('index')
 
     if request.method == 'POST':
+        form = LoginForm(request.POST)
+
         if form.is_valid():
-            form = LoginForm(request.POST)
-            user = auth.authenticate(request, username=form.username, password=form.password)
+            user = auth.authenticate(request, username=form['username'].value(), password=form['password'].value())
 
             if user is not None:
                 auth.login(request, user)
@@ -22,6 +21,7 @@ def login(request):
             else:
                 messages.error(request, "login failed")
                 return redirect('login')
+    form = LoginForm()
 
     return render(request, 'user/login.html', {"form": form})
 
