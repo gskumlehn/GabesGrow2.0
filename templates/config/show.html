@@ -16,6 +16,15 @@
             Pre-harvest
         {% endif %}
     </p>
+    <div class="mt-1">
+        {% if config.stageType == 'VG' %}
+            <img src="{{ static 'assets/images/veg.png' }}" alt="Vegetative stage">
+        {% elif config.stageType == 'FL' %}
+            <img src="{{ static 'assets/images/flow.png' }}" alt="Flowering stage">
+        {% else %}
+            <img src="{{ static 'assets/images/pre.png' }}" alt="Pre-harvest stage">
+        {% endif %}
+    </div>
 
     <p class="mt-5">
         Last Update: {{ config.lastUpdate }}
