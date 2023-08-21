@@ -7,7 +7,7 @@
             </a>
             <div class="row">
                 <a class="col col-sm-6" href="{% url 'data' %}">data</a>
-                <a class="col col-sm-6" href="{% url 'config' %}">config</a>
+                <a class="col col-sm-6" href="{% url 'config' 1 %}">config</a>
                 <a class="col col-sm-6" href="{% url 'stageList' %}">stages</a>
                 {% if user.is_authenticated %}
                     <a class="col col-sm-6" href="{% url 'logout' %}">logout</a>

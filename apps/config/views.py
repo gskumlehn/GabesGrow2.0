@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.utils.dateparse import parse_datetime
 from apps.config.models import GrowConfig, GrowConfigHistory
 
-def index(request):
-    config = GrowConfig.objects.values()[0]
+def index(request, config_id):
+    config = GrowConfig.objects.get(config_id)
     history = GrowConfigHistory.objects.order_by("date").values()
     return render(request, 'config/show.html', {"config": config, "history": history})
