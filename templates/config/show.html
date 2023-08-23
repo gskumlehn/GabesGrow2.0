@@ -2,42 +2,38 @@
 {% load static %}
 {% block content %}
 <div>
-    <form action="{% url 'editConfig'  config.id %}" method="POST" >
-        {% csrf_token%}
-        <div class="container mt-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6">
-                    <div class="card px-5 py-5">
-                        <div class="form-data" v-if="!submitted">
-                            {%  for field in form.visible_fields %}
-                                <div class="forms-inputs mb-4" style="margin-bottom: 5px;">
-                                    <label for="{{ field.id_for_label }}" class="col-6 col-md-6" style="margin-bottom: 5px;">{{ field.label }}</label>
-                                    {{ field }}
-                                </div>
-                            {% endfor %}
-                            <div class="mb-3">
-                                <button class="btn btn-success col-6 col-md-6" style="padding: top 5px;" type="submit">save changes</button>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <form action="{% url 'editConfig'  config.id %}" method="POST" >
+                    {% csrf_token%}
+                    <div class="form-data" v-if="!submitted">
+                        {%  for field in form.visible_fields %}
+                            <div class="forms-inputs mb-4" style="margin-bottom: 5px;">
+                                <label for="{{ field.id_for_label }}" class="col-6 col-md-6" style="margin-bottom: 5px;">{{ field.label }}</label>
+                                {{ field }}
                             </div>
+                        {% endfor %}
+                        <div class="mb-3">
+                            <button class="btn btn-success col-6 col-md-6" style="padding: top 5px;" type="submit">save changes</button>
                         </div>
                     </div>
-                </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                {% if config.stageType == 'VG' %}
+                    <img src="{% static 'assets/images/veg.png' %}" alt="Vegetative stage">
+                {% elif config.stageType == 'FL' %}
+                    <img src="{% static 'assets/images/flow.png' %}" alt="Flowering stage">
+                {% else %}
+                    <img src="{% static 'assets/images/pre.png' %}" alt="Pre-harvest stage">
+                {% endif %}
+                <p class="mt-5">
+                    Last Update: {{ config.lastUpdate }}
+                </p>
             </div>
         </div>
-    </form>
-    <div class="mt-1">
-        {% if config.stageType == 'VG' %}
-            <img src="{% static 'assets/images/veg.png' %}" alt="Vegetative stage">
-        {% elif config.stageType == 'FL' %}
-            <img src="{% static 'assets/images/flow.png' %}" alt="Flowering stage">
-        {% else %}
-            <img src="{% static 'assets/images/pre.png' %}" alt="Pre-harvest stage">
-        {% endif %}
     </div>
-
-    <p class="mt-5">
-        Last Update: {{ config.lastUpdate }}
-    </p>
-
 </div>
 
 <table class="table mt-5">
