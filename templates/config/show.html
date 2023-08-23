@@ -2,12 +2,28 @@
 {% load static %}
 {% block content %}
 <div>
-    {%  for field in form.visible_fields %}
-        <div class="forms-inputs mt-5" style="margin-bottom: 5px;">
-            <label for="{{ field.id_for_label }}" class="col-6 col-md-6" style="margin-bottom: 5px;">{{ field.label }}</label>
-            {{ field }}
+    <form action="{% url 'editConfig'  config.id %}" method="POST" >
+        {% csrf_token%}
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <div class="card px-5 py-5">
+                        <div class="form-data" v-if="!submitted">
+                            {%  for field in form.visible_fields %}
+                                <div class="forms-inputs mt-5" style="margin-bottom: 5px;">
+                                    <label for="{{ field.id_for_label }}" class="col-6 col-md-6" style="margin-bottom: 5px;">{{ field.label }}</label>
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <div class="mb-3">
+                                <button class="btn btn-success col-6 col-md-6" style="padding: top 5px;" type="submit">save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    </form>
     <div class="mt-1">
         {% if config.stageType == 'VG' %}
             <img src="{% static 'assets/images/veg.png' %}" alt="Vegetative stage">
