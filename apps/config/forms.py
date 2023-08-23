@@ -1,5 +1,4 @@
 from django import forms
-from apps.stage.models import StageType
 from apps.config.models import GrowConfig
 
 class ConfigForm(forms.Form):

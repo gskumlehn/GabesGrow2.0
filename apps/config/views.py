@@ -11,7 +11,7 @@ def index(request, config_id):
 
 def edit(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
-    form = ConfigForm(request.POST, instance=config)
+    form = ConfigForm(request.POST)
 
     if form.is_valid():
         form.save()
