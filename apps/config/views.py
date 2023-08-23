@@ -12,7 +12,7 @@ def edit(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
     form = ConfigForm(request.POST, instance=config)
 
-    if form.light.value():
+    if form.lights.value():
         config.lightOn
     else:
         config.lightOff
