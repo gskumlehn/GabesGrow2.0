@@ -16,10 +16,9 @@ class ConfigForm(forms.ModelForm):
                     "class": "form-control"
                 }
             ),
-            "lastUpdate": forms.DateTimeField(
+            "lastUpdate": forms.HiddenInput(
                 attrs={
                     "class": "form-control",
-                    "hidden": True
                 }
             )
         }
