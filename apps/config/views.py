@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 
 def index(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
-    form = ConfigForm(instance=config)
+    form = ConfigForm(request.GET, instance=config)
     history = GrowConfigHistory.objects.filter(id=config_id).order_by("date").values()
     return render(request, 'config/show.html', {"config": config, "history": history, "form": form})
 
