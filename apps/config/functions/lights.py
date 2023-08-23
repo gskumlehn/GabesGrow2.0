@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 
-lightRelayPort = 4
+lightRelayPort = 7
 def initBoard():
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setwarnings(False)
 
 def setAsOutput(pinNumber):
