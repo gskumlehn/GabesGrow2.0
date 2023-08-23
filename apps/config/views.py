@@ -12,6 +12,11 @@ def edit(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
     form = ConfigForm(request.POST, instance=config)
 
+    if form.light.value():
+        config.lightOn
+    else:
+        config.lightOff
+
     if form.is_valid():
         form.save()
         messages.success(request, "Config updated")
