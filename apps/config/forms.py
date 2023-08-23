@@ -10,11 +10,16 @@ class ConfigForm(forms.ModelForm):
                attrs={
                    "class": "form-control"
                 }
-            )
-            ,
+            ),
             "stageType": forms.Select(
                 attrs={
                     "class": "form-control"
+                }
+            ),
+            "lastUpdate": forms.DateTimeField(
+                attrs={
+                    "class": "form-control",
+                    "hidden": True
                 }
             )
         }
