@@ -1,23 +1,21 @@
 from django import forms
 from apps.stage.models import StageType
+from apps.config.models import GrowConfig
 
 class ConfigForm(forms.Form):
-    watering=forms.BooleanField(
-        label="auto-watering",
-        widget=forms.CheckboxInput(
-            attrs={
-                "class": "form-control"
-            }
-        )
-    )
-
-    stageType=forms.CharField(
-        label="type",
-        widget=forms.Select(
-            choices=StageType.choices,
-            attrs={
-                "class": "form-control"
-            }
-        )
-    )
-
+    class Meta:
+        model = GrowConfig
+        exclude = ['lastUpdate']
+        widgets = {
+            "watering": forms.CheckboxInput(
+               attrs={
+                   "class": "form-control"
+                }
+            )
+            ,
+            "stageType": forms.Select(
+                attrs={
+                    "class": "form-control"
+                }
+            )
+        }
