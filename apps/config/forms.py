@@ -1,7 +1,7 @@
 from django import forms
 from apps.config.models import GrowConfig
 
-class ConfigForm(forms.Form):
+class ConfigForm(forms.ModelForm):
     class Meta:
         model = GrowConfig
         exclude = ['lastUpdate']
