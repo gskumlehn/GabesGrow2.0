@@ -11,11 +11,11 @@ def index(request, config_id):
 
 def edit(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
-    form = ConfigForm(request.POST)
+    form = ConfigForm(request.POST, instance=config)
 
     if form.is_valid():
         form.save()
-        messages.sucess(request, "Config updated")
+        messages.success(request, "Config updated")
     else:
         messages.error(request, "Config update failed")
 
