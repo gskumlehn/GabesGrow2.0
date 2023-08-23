@@ -9,11 +9,7 @@ class GrowConfig(models.Model):
     lights = models.BooleanField(null=False, blank=False, default=False)
 
     def lightOn(self):
-        self.lights = True
         lights.lightsOn()
-        self.save()
 
     def lightOff(self):
-        self.lights = True
         lights.lightsOn()
-        self.save()
