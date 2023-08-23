@@ -1,6 +1,5 @@
 from apps.config.forms import ConfigForm
 from apps.config.models import GrowConfig, GrowConfigHistory
-from datetime import datetime
 from django.contrib import messages
 from django.shortcuts import render, redirect
 
@@ -13,7 +12,6 @@ def index(request, config_id):
 def edit(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
     form = ConfigForm(request.POST, instance=config)
-    form.lastUpdate = datetime.now()
 
     if form.is_valid():
         form.save()
