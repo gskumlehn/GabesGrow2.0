@@ -6,11 +6,6 @@ class ConfigForm(forms.ModelForm):
         model = GrowConfig
         exclude = ['lastUpdate']
         widgets = {
-            "watering": forms.CheckboxInput(
-               attrs={
-                   "class": "form-control"
-                }
-            ),
             "stageType": forms.Select(
                 attrs={
                     "class": "form-control"
