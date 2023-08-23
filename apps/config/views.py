@@ -19,5 +19,5 @@ def edit(request, config_id):
     else:
         messages.error(request, "Config update failed")
 
-    return redirect('index', config_id=config_id)
+    return redirect('config', config_id=config_id)
 
