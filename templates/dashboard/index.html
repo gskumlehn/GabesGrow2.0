@@ -8,9 +8,9 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-4">
                 <form action="{% url 'water' %}" method="GET" >
-                        <div class="mb-3">
-                            <button class="btn btn-primary col-6 col-md-6" style="padding: top 5px;" type="submit">water</button>
-                        </div>
+                    {% csrf_token%}
+                    <div class="mb-3">
+                        <button class="btn btn-primary col-6 col-md-6" style="padding: top 5px;" type="submit">water</button>
                     </div>
                 </form>
             </div>
