@@ -5,5 +5,3 @@ def start():
     scheduler = BackgroundScheduler
     config = GrowConfig.objects.get(id=1)
     scheduler.addJob(config.lightOn, "interval")
-
-}
