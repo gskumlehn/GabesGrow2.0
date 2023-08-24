@@ -1,4 +1,4 @@
-from apscheduler.schedulers.background import BaseScheduler
+from apscheduler.schedulers.base import BaseScheduler
 from apps.data.functions.AirHumidityAndTemperature import get
 from apps.data.models import AirData
 
