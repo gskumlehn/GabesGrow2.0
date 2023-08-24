@@ -14,9 +14,9 @@ def writesToPort(pinNumber, portState):
 def lightsOn():
     initBoard()
     setAsOutput(lightRelayPort)
-    writesToPort(lightRelayPort, 0)
+    writesToPort(lightRelayPort, 1)
 
 def lightsOff():
     initBoard()
     setAsOutput(lightRelayPort)
-    writesToPort(lightRelayPort, 1)
+    writesToPort(lightRelayPort, 0)
