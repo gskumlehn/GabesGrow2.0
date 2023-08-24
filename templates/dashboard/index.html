@@ -3,5 +3,19 @@
 {% block content %}
 <main role="main" class="inner cover mt-5">
     {% include 'dashboard/partials/temperature.html' %}
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-4">
+                <form action="{% url 'water' %}" method="POST" >
+                        <div class="mb-3">
+                            <button class="btn btn-primary col-6 col-md-6" style="padding: top 5px;" type="submit">water</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </main>
 {% endblock %}

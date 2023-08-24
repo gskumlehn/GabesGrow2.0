@@ -3,6 +3,7 @@ from apps.config.models import GrowConfig
 from apps.config.functions import Lights
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from apps.config.functions.Watering import waterFor
 
 def index(request, config_id):
     config = GrowConfig.objects.get(id=config_id)
@@ -25,3 +26,5 @@ def edit(request, config_id):
 
     return redirect('config', config_id=config_id)
 
+def water(request):
+    waterFor(5)
