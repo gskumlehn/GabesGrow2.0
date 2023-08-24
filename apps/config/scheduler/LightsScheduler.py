@@ -19,7 +19,7 @@ def start():
 
     scheduler.add_job(func=lightsOffIfNotVegetative,
                       trigger="cron",
-                      minute=0,
-                      hour=18)
+                      minute=35,
+                      hour=19)
 
     scheduler.start()
