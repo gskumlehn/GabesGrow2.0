@@ -6,4 +6,3 @@ def start():
     scheduler = BackgroundScheduler
     scheduler.addJob(AirData(humidity=getHumidity(), temperature=getTemperature()).save(), "interval", minutes=1, replace_existing=True)
     scheduler.start()
-}
