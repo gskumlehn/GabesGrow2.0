@@ -28,3 +28,5 @@ def edit(request, config_id):
 
 def water(request):
     waterFor(5)
+
+    return redirect('index')
