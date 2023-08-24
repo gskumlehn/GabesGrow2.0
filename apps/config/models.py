@@ -1,6 +1,6 @@
 from django.db import models
 from apps.stage.models import StageType
-from apps.config.functions import lights
+from apps.config.functions import Lights
 
 class GrowConfig(models.Model):
     lastUpdate = models.DateTimeField(null=False, blank=False, auto_now=True)
