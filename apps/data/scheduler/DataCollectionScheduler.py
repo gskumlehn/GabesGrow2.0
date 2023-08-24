@@ -1,8 +1,12 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from apps.data.functions.AirHumidityAndTemperature import getHumidity, getTemperature
+from apps.data.functions.AirHumidityAndTemperature import get
 from apps.data.models import AirData
 
 def start():
     scheduler = BackgroundScheduler
-    scheduler.add_job(AirData(humidity=getHumidity(), temperature=getTemperature()).save(), "interval", minutes=1, replace_existing=True)
+    humidity, temperature = get()
+    scheduler.add_job(func=AirData.objects.create(humidity=humidity, temperature=temperature).save(),
+                      trigger="interval",
+                      minutes=1,
+                      replace_existing=True)
     scheduler.start()
