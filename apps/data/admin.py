@@ -1,9 +1,8 @@
 from django.contrib import admin
 from apps.data.models import AirData
 class ListAirData(admin.ModelAdmin):
-    list_display = ('id', 'stageType', 'watering', 'lastUpdate')
-    list_display_links = ('id', 'lastUpdate')
-    list_editable = ('stageType', 'watering')
-    list_per_page = 1
+    list_display = ('id', 'date', 'temperature', 'humidity')
+    list_display_links = ('id', 'date', 'temperature', 'humidity')
+    list_per_page = 30
 
 admin.site.register(AirData, ListAirData)
