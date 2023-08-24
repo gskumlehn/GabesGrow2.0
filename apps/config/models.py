@@ -7,9 +7,3 @@ class GrowConfig(models.Model):
     stageType = models.CharField(max_length=2, choices=StageType.choices, default=StageType.VEGETATIVE,  null=False, blank=False)
     watering = models.BooleanField(null=False, blank=False)
     lights = models.BooleanField(null=False, blank=False, default=False)
-
-    def lightOn(self):
-        lights.lightsOn()
-
-    def lightOff(self):
-        lights.lightsOn()
