@@ -7,5 +7,6 @@ def start():
     scheduler.add_job(func=AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()).save,
                       trigger="cron",
                       minute="0/30",
+                      id="collect_data",
                       replace_existing=True)
     scheduler.start()
