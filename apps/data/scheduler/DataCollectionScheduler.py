@@ -4,7 +4,7 @@ from apps.data.models import AirData
 
 def start():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(func=AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()).save,
+    scheduler.add_job(func=AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()),
                       trigger="cron",
                       minute="0/30",
                       replace_existing=True)
