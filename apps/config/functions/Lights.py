@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-lightRelayPort = 7
+lightRelayPort = 8
 def initBoard():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setwarnings(False)
