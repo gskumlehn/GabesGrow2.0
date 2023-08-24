@@ -1,22 +1,13 @@
-import RPi.GPIO as GPIO
+from apps.config.functions import Relay
 
 lightRelayPort = 8
-def initBoard():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setwarnings(False)
-
-def setAsOutput(pinNumber):
-    GPIO.setup(pinNumber, GPIO.OUT)
-
-def writesToPort(pinNumber, portState):
-    GPIO.output(pinNumber, portState)
 
 def lightsOn():
-    initBoard()
-    setAsOutput(lightRelayPort)
-    writesToPort(lightRelayPort, 1)
+    Relay.initBoard()
+    Relay.setAsOutput(lightRelayPort)
+    Relay.writesToPort(lightRelayPort, 1)
 
 def lightsOff():
-    initBoard()
-    setAsOutput(lightRelayPort)
-    writesToPort(lightRelayPort, 0)
+    Relay.initBoard()
+    Relay.setAsOutput(lightRelayPort)
+    Relay.writesToPort(lightRelayPort, 0)
