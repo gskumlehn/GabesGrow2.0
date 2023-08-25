@@ -5,5 +5,5 @@ def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=collectDataIfNecessary,
                       trigger="cron",
-                      minute="0,30,42,43,44")
+                      minute="0,30,53,54,55")
     scheduler.start()
