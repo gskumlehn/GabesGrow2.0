@@ -5,5 +5,6 @@ def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=Watering.waterIfDry,
                       trigger="cron",
-                      minute="0,30")
+                      minute="0,30",
+                      second=0)
     scheduler.start()
