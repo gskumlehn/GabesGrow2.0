@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.data.apps.DataConfig',
     'apps.stage.apps.StageConfig',
     'apps.user.apps.UserConfig',
+    'django_apscheduler'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles'
 ]
+
+APSCHEDULER_DATETIME_FORMAT = "G:i d/m/Y"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
