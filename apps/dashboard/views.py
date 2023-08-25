@@ -13,6 +13,6 @@ def index(request):
                   {"humidity": humidity, "temperature": temperature, "time": collectionTime})
 
 def data(request):
-    data = AirData.objects.latest(field_name='date')
+    data = AirData.objects.all()[0]
     return render(request, 'dashboard/data.html', {"data": data})
 
