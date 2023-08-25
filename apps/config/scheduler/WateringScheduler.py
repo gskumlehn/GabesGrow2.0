@@ -5,5 +5,6 @@ def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=Watering.waterIfDry(),
                       trigger="interval",
-                      minutes=30)
+                      minutes=30,
+                      jobstore='djangojobstore')
     scheduler.start()
