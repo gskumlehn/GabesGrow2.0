@@ -1,7 +1,7 @@
-from apscheduler.schedulers.base import BaseScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from apps.config.functions.Lights import lightsOnIfVegetative, lightsOffIfVegetative, lightsOnIfNotVegetative, lightsOffIfNotVegetative
 def start():
-    scheduler = BaseScheduler()
+    scheduler = BackgroundScheduler()
     scheduler.add_job(func=lightsOnIfVegetative,
                       trigger="cron",
                       minute=30,
