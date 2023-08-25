@@ -6,5 +6,5 @@ def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()).save,
                       trigger="cron",
-                      second=0)
+                      second="0,15,30,45")
     scheduler.start()
