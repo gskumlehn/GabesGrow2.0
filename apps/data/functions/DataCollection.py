@@ -3,7 +3,7 @@ from apps.data.models import AirData
 from datetime import datetime
 
 def collectDataIfNecessary():
-    data = AirData.objects.latest('date')
+    data = AirData.objects.latest(field_name='date')
     now = datetime.now()
     if data.date.hour != now.hour and data.date.minute != now.minute:
         AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()).save()
