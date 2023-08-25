@@ -5,25 +5,21 @@ def start():
     scheduler.add_job(func=lightsOnIfVegetative,
                       trigger="cron",
                       minute=30,
-                      hour=4,
-                      jobstore='djangojobstore')
+                      hour=4)
 
     scheduler.add_job(func=lightsOffIfVegetative,
                       trigger="cron",
                       minute=30,
-                      hour=22,
-                      jobstore='djangojobstore')
+                      hour=22)
 
     scheduler.add_job(func=lightsOnIfNotVegetative,
                       trigger="cron",
                       minute=0,
-                      hour=6,
-                      jobstore='djangojobstore')
+                      hour=6)
 
     scheduler.add_job(func=lightsOffIfNotVegetative,
                       trigger="cron",
                       minute=0,
-                      hour=18,
-                      jobstore='djangojobstore')
+                      hour=18)
 
     scheduler.start()
