@@ -4,6 +4,6 @@ from apps.config.functions import Watering
 def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=Watering.waterIfDry,
-                      trigger="interval",
-                      minutes=30)
+                      trigger="cron",
+                      minute="0,30")
     scheduler.start()
