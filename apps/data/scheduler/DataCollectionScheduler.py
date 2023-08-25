@@ -4,5 +4,6 @@ from apps.data.functions.DataCollection import collectDataIfNecessary
 def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=collectDataIfNecessary,
-                      trigger="cron")
+                      trigger="cron",
+                      second=0)
     scheduler.start()
