@@ -1,17 +1,24 @@
 from apps.config.functions import Relay
 from time import sleep
 
-lightRelayPort = 10
+wateringRelayPort = 10
+waterSensorPort = 22
 
 def wateringOn():
-    Relay.writesToPort(lightRelayPort, 0)
+    Relay.writesToPort(wateringRelayPort, 0)
 
 def wateringOff():
-    Relay.writesToPort(lightRelayPort, 1)
+    Relay.writesToPort(wateringRelayPort, 1)
 
 def waterFor(seconds):
     Relay.initBoard()
-    Relay.setAsOutput(lightRelayPort)
+    Relay.setAsOutput(wateringRelayPort)
     wateringOn()
     sleep(seconds)
     wateringOff()
+
+def waterIfDry():
+    Relay.initBoard()
+    Relay.setAsInput(waterSensorPort)
+    if Relay.readsPort(waterSensorPort):
+        waterFor(5)
