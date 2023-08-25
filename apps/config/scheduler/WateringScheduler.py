@@ -1,8 +1,8 @@
-from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.base import BaseScheduler
 from apps.config.functions import Watering
 
 def start():
-    scheduler = BackgroundScheduler()
+    scheduler = BaseScheduler()
     scheduler.add_job(func=Watering.waterIfDry(),
                       trigger="interval",
                       minutes=30)
