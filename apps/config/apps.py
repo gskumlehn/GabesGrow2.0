@@ -6,5 +6,7 @@ class ConfigConfig(AppConfig):
     name = 'apps.config'
 
     def ready(self):
-        from apps.config.scheduler import LightsScheduler
+        from apps.config.scheduler import LightsScheduler, WateringScheduler, DataCollectionScheduler
         LightsScheduler.start()
+        WateringScheduler.start()
+        DataCollectionScheduler.start()
