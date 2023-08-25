@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'apps.data.apps.DataConfig',
     'apps.stage.apps.StageConfig',
     'apps.user.apps.UserConfig',
-    'django_apscheduler'
+    'django.apscheduler'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
