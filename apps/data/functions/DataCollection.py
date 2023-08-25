@@ -3,8 +3,8 @@ from apps.data.models import AirData
 from datetime import datetime
 
 def collectDataIfNecessary():
-    data = AirData.objects.all()[0]
-    if data is not None:
-        now = datetime.now()
-        if data.date.minute != now.minute:
-            AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()).save()
+    start = datetime.now - datetime.timedelta(minutes=15)
+    end = datetime.now
+    dataList = AirData.objects.filter(date__range=[start, end])
+    if not dataList:
+        AirData.objects.create(humidity=getHumidity(), temperature=getTemperature()).save()
