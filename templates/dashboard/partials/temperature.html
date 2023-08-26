@@ -6,5 +6,11 @@
     <br>
     Humidity: {{ humidity }}%
     <br>
+    {% if wet %}}
+    Wet
+    {% else %}
+    Dry
+    {% end if %}
+    <br>
     at {{ time }}
 </div>
