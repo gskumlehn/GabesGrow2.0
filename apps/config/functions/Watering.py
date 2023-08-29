@@ -1,4 +1,5 @@
 from apps.config.functions import Pinout
+from apps.config.models import GrowConfig
 from time import sleep
 
 wateringRelayPort = 15
@@ -16,6 +17,11 @@ def waterFor(seconds):
     wateringOn()
     sleep(seconds)
     wateringOff()
+
+def waterIfDryAndWateringOn:
+    config = GrowConfig.objects.get(id=1)
+    if (config.watering):
+        waterIfDry()
 
 def waterIfDry():
     if True:
