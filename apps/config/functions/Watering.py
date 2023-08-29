@@ -24,4 +24,4 @@ def waterIfDry():
 def isDry():
     Pinout.initBoard()
     Pinout.setAsInput(waterSensorPort)
-    return Pinout.readsPort(waterSensorPort)
+    return bool(Pinout.readsPort(waterSensorPort))
