@@ -18,7 +18,7 @@ def waterFor(seconds):
     wateringOff()
 
 def waterIfDry():
-    if isDry():
+    if True:
         waterFor(5)
 
 def isDry():
