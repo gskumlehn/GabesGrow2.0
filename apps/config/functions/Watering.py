@@ -2,7 +2,7 @@ from apps.config.functions import Pinout
 from time import sleep
 
 wateringRelayPort = 10
-waterSensorPort = 12
+waterSensorPort = 18
 
 def wateringOn():
     Pinout.writesToPort(wateringRelayPort, 0)
@@ -18,10 +18,10 @@ def waterFor(seconds):
     wateringOff()
 
 def waterIfDry():
-    if isWet():
+    if isDry():
         waterFor(5)
 
-def isWet():
+def isDry():
     Pinout.initBoard()
     Pinout.setAsInput(waterSensorPort)
     return Pinout.readsPort(waterSensorPort)
