@@ -1,7 +1,7 @@
 from apps.config.functions import Pinout
 from apps.config.models import GrowConfig
 
-lightRelayPort = 8
+lightRelayPort = 14
 
 def lightsOn():
     Pinout.initBoard()

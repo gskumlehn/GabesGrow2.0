@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 def initBoard():
-    GPIO.setmode(GPIO.BOARD)
+    GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
 
 def setAsInput(pinNumber):
