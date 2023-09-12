@@ -9,7 +9,7 @@ def index(request):
         return redirect('login')
 
     humidity, temperature = AirHumidityAndTemperature.get()
-    dry = isDry()
+    dry = isDry
     collectionTime = datetime.now().strftime("%H:%M")
     return render(request, 'dashboard/index.html',{"humidity": humidity, "temperature": temperature, "dry": dry, "time": collectionTime})
 
