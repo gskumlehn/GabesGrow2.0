@@ -1,6 +1,6 @@
 from apps.config.forms import ConfigForm
 from apps.config.models import GrowConfig
-from apps.config.functions import Lights
+from apps.config.functions.Lights import *
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from apps.config.functions.Watering import waterFor
@@ -17,9 +17,9 @@ def edit(request, config_id):
     if form.is_valid():
         updatedConfig = form.save()
         if updatedConfig.lights:
-            Lights.lightsOn()
+            lightsOn()
         else:
-            Lights.lightsOff()
+            lightsOff()
         messages.success(request, "Config updated")
     else:
         messages.error(request, "Config update failed")
