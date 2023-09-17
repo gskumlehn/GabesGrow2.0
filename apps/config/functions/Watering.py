@@ -1,4 +1,4 @@
-from apps.config.functions import Pinout
+from apps.config.functions.Pinout import *
 from apps.config.models import GrowConfig
 from time import sleep
 
@@ -7,16 +7,16 @@ waterSensorPort = 24
 
 
 def wateringOn():
-    Pinout.writesToPort(wateringRelayPort, 0)
+    writesToPort(wateringRelayPort, 0)
 
 
 def wateringOff():
-    Pinout.writesToPort(wateringRelayPort, 1)
+    writesToPort(wateringRelayPort, 1)
 
 
 def waterFor(seconds):
-    Pinout.initBoard()
-    Pinout.setAsOutput(wateringRelayPort)
+    initBoard()
+    setAsOutput(wateringRelayPort)
     wateringOn()
     sleep(seconds)
     wateringOff()
@@ -29,11 +29,11 @@ def waterIfDryAndWateringOn():
 
 
 def waterIfDry():
-    if True:
+    if isDry():
         waterFor(5)
 
 
 def isDry():
-    Pinout.initBoard()
-    Pinout.setAsInput(waterSensorPort)
-    return Pinout.readsPort(waterSensorPort)
+    initBoard()
+    setAsInput(waterSensorPort)
+    return readsPort(waterSensorPort)

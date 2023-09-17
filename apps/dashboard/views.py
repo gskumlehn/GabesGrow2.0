@@ -2,7 +2,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from apps.data.functions import AirHumidityAndTemperature
 from apps.data.models import AirData
-from apps.config.functions.Watering import *
+from apps.config.functions.Watering import isDry
 
 def index(request):
     if not request.user.is_authenticated:
