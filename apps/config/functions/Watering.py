@@ -24,12 +24,7 @@ def waterFor(seconds):
 
 def waterIfDryAndWateringOn():
     config = GrowConfig.objects.get(id=1)
-    if (config.watering):
-        waterIfDry()
-
-
-def waterIfDry():
-    if isDry():
+    if config.watering and isDry():
         waterFor(5)
 
 
