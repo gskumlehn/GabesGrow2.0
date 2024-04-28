@@ -1,4 +1,4 @@
-from apscheduler.schedulers.background import BackgroundScheduler
+from APScheduler.schedulers.background import BackgroundScheduler
 from apps.config.functions.Lights import lightsOnIfVegetative, lightsOffIfVegetative, lightsOnIfNotVegetative, lightsOffIfNotVegetative
 def start():
     scheduler = BackgroundScheduler()

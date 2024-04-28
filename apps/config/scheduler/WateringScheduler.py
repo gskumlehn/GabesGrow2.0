@@ -1,4 +1,4 @@
-from apscheduler.schedulers.background import BackgroundScheduler
+from APScheduler.schedulers.background import BackgroundScheduler
 from apps.config.functions.Watering import waterIfDryAndWateringOn
 
 def start():
