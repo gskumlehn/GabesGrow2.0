@@ -1,4 +1,4 @@
-from APScheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from apps.data.functions.DataService import saveAirData
 
 def start():
